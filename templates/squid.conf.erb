@@ -1,0 +1,38 @@
+### File managed with puppet ###
+#### Served by:        '<%= scope.lookupvar('::servername') %>'
+#### Module:           '<%= scope.to_hash['module_name'] %>'
+#### Template source:  '<%= template_source %>'
+
+<% @acls.each do |acl| -%>
+<%- if acl.length > 2 then -%>
+acl <%= acl.join(' ') %>
+<%- else -%>
+
+<%- end -%>
+<%- end -%>
+
+<% @http_access.each do |access| -%>
+<%- if access.length > 1 then -%>
+http_access <%= access.join(' ') %>
+<%- else -%>
+
+<%- end -%>
+<%- end -%>
+
+http_port <%= @proxy_port %>
+
+hierarchy_stoplist <%= @hierarchy_stoplist.join(' ') -%>
+
+<%- if @cache_dir.kind_of?(Array) then -%>
+cache_dir <%= @cache_dir.join(' ') %>
+<%- end -%>
+
+coredump_dir <%= @coredump_dir %>
+
+<% @refresh_pattern.each do |pattern| -%>
+<%- if pattern.length > 1 then -%>
+refresh_pattern <%= pattern.join(' ') %>
+<%- else -%>
+
+<%- end -%>
+<%- end %>
