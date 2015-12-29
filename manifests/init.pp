@@ -11,12 +11,12 @@ class squid(
 
 
     package { 'squid':
-        name => $package_name,
         ensure => present,
+        name   => $package_name,
     }
 
     group { 'squid':
-        ensure => present,
+        ensure  => present,
         require => Package['squid'],
         # best to let the package take care of this
     }
@@ -30,8 +30,8 @@ class squid(
     }
 
     file { 'squid.conf':
-        path    => '/etc/squid/squid.conf',
         ensure  => present,
+        path    => '/etc/squid/squid.conf',
         content => template('squid/squid.conf.erb'),
         mode    => '0640',
         owner   => 'root',
