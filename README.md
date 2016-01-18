@@ -1,4 +1,5 @@
 # Squid Module
+[![Build Status](https://travis-ci.org/Adaptavist/puppet-squid.svg?branch=master)](https://travis-ci.org/Adaptavist/puppet-squid)
 
 The **Squid** module handles the installation, running and configuration of 
 the [squid](#squid) http proxy server.

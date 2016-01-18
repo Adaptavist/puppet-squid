@@ -1,5 +1,5 @@
 name 'adaptavist-squid'
-version '0.1.4'
+version '0.1.5'
 author 'Adaptavist Ltd.'
 project_page 'https://github.com/Adaptavist/puppet-squid'
 source 'https://github.com/Adaptavist/puppet-squid.git'
